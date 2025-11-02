@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voice Modulation Project | Akashdeep Dey</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-200 font-inter">
+
+  <div class="min-h-screen p-6 max-w-4xl mx-auto space-y-8">
+
+    <!-- Header -->
+    <header class="text-center space-y-4">
+      <h1 class="text-3xl font-bold text-yellow-400">🎙 Voice Modulation Through Gesture Recognition</h1>
+      <p class="text-gray-400">A detailed project report by Akashdeep Dey and team</p>
+    </header>
+
+    <!-- Navigation Back -->
+    <div>
+      <a href="index.html" class="inline-flex items-center text-yellow-400 hover:underline">
+        <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Content Sections -->
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Abstract</h2>
+      <p class="text-gray-400">This project introduces a comprehensive and innovative solution to facilitate voice modulation through gesture recognition, utilizing only a Raspberry Pi, camera module, and speaker...</p>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Objectives</h2>
+      <ul class="list-disc ml-6 text-gray-400 space-y-1">
+        <li>Develop a robust gesture recognition module using Raspberry Pi’s camera interface and OpenCV libraries.</li>
+        <li>Define meaningful hand gestures mapped to voice modulation parameters.</li>
+        <li>Implement a text-to-speech engine with dynamic voice modulation.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">System Architecture</h2>
+      <p class="text-gray-400">The architecture integrates the camera module, gesture classification, TTS engine, and audio output to create a fully functional embedded voice modulation system...</p>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Implementation Highlights</h2>
+      <p class="text-gray-400">The system uses MediaPipe, OpenCV, and eSpeak for real-time hand gesture recognition and voice modulation. It is portable, cost-efficient, and scalable for future improvements...</p>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Testing & Results</h2>
+      <p class="text-gray-400">Extensive tests under various lighting conditions, hand movements, and environments showed reliable accuracy and real-time responsiveness. Users appreciated the ease of communication...</p>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Future Scope</h2>
+      <p class="text-gray-400">The project can be enhanced by adding adaptive learning, multilingual output, integration with IoT devices, and expanding gesture sets to further assist differently-abled users.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm pt-8 border-t border-gray-700">
+      © 2025 Akashdeep Dey. All rights reserved.
+    </footer>
+
+  </div>
+
+  <!-- Optional Script for Smooth Scroll or Animation -->
+  <script>
+    document.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (a.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(a.getAttribute('href'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

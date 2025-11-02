@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSP Mini Project | Akashdeep Dey</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-200 font-inter">
+
+  <div class="min-h-screen p-6 max-w-4xl mx-auto space-y-8">
+
+    <!-- Header -->
+    <header class="text-center space-y-4">
+      <h1 class="text-3xl font-bold text-yellow-400">📊 Echo and Reverb Effects in Audio Signals</h1>
+      <p class="text-gray-400">A detailed report on Digital Signal Processing by Akashdeep Dey</p>
+    </header>
+
+    <!-- Navigation Back -->
+    <div>
+      <a href="index.html" class="inline-flex items-center text-yellow-400 hover:underline">
+        <i class="fas fa-arrow-left mr-2"></i> Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Abstract -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Abstract</h2>
+      <p class="text-gray-400">This project explores how echo and reverb effects are generated in audio signals using digital signal processing techniques like convolution. The effects enrich sound in applications such as music production, gaming, and simulation environments.</p>
+    </section>
+
+    <!-- Introduction -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Introduction</h2>
+      <p class="text-gray-400">Echo and reverb are natural acoustic phenomena created when sound waves reflect off surfaces. Using DSP algorithms in Octave or MATLAB, these effects can be simulated by convolving audio signals with designed impulse responses, allowing for enhanced sound effects in digital media.</p>
+    </section>
+
+    <!-- Project Details -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Project Details</h2>
+      <ul class="list-disc ml-6 text-gray-400 space-y-1">
+        <li><strong>Audio Input:</strong> Recorded music or speech signal.</li>
+        <li><strong>Impulse Response:</strong> Synthesized or real-world environment modeling reflections.</li>
+        <li><strong>Convolution:</strong> Combining signal and impulse response to create effects.</li>
+        <li><strong>Audio Output:</strong> Enhanced signal with echo or reverb.</li>
+      </ul>
+    </section>
+
+    <!-- Operation of Circuit -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Operation</h2>
+      <p class="text-gray-400">The algorithm creates impulse responses with delayed and decayed versions of the original signal. Echo uses fewer, clear repeats, while reverb simulates more complex reflections. Convolution merges these elements to generate the desired effect.</p>
+    </section>
+
+    <!-- Program Code -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Program</h2>
+      <div class="bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm text-gray-300 font-mono space-y-4">
+        <div>
+          <h3 class="text-yellow-400 mb-2 font-semibold">Echo Effect Code</h3>
+          <pre>
+[x, fs] = audioread("audio1.wav");
+x = x / max(abs(x));
+delay = 0.2;
+decay = 0.5;
+num_delays = 3;
+impulse_response = zeros(1, round(fs * (delay * num_delays)));
+for n = 1:num_delays
+    impulse_response(round(fs * (delay * n))) = decay^(n-1);
+end
+y_echo = conv(x, impulse_response);
+y_echo = y_echo / max(abs(y_echo));
+sound(y_echo, fs);
+audiowrite('output_with_echo.wav', y_echo, fs);
+          </pre>
+        </div>
+
+        <div>
+          <h3 class="text-yellow-400 mb-2 font-semibold">Reverb Effect Code</h3>
+          <pre>
+[x, fs] = audioread("audio1.wav");
+x = x / max(abs(x));
+reverb_time = 1;
+decay = 0.5;
+num_reflections = 10;
+impulse_response_reverb = zeros(1, round(fs * reverb_time));
+for n = 1:num_reflections
+    impulse_response_reverb(round(fs * (n * reverb_time / num_reflections))) = decay^(n-1);
+end
+y_reverb = conv(x, impulse_response_reverb);
+y_reverb = y_reverb / max(abs(y_reverb));
+sound(y_reverb, fs);
+audiowrite('output_with_reverb.wav', y_reverb, fs);
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Results</h2>
+      <p class="text-gray-400">The project successfully demonstrates how convolution adds echo and reverb effects. Clear repetitions and smooth reflections were achieved, validating the algorithm’s accuracy and effectiveness in enhancing audio signals through digital processing.</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold border-b border-yellow-400 pb-2">Conclusion</h2>
+      <p class="text-gray-400">The project shows the feasibility of using convolution for audio effects. By adjusting delay, decay, and reflection parameters, various acoustic scenarios can be simulated, offering deeper insights into digital audio processing and future applications like real-time effects and complex impulse modeling.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm pt-8 border-t border-gray-700">
+      © 2025 Akashdeep Dey. All rights reserved.
+    </footer>
+
+  </div>
+
+  <!-- Smooth Scroll Script -->
+  <script>
+    document.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (a.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(a.getAttribute('href'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

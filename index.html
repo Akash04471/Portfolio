@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akashdeep Dey | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Font Awesome 6 (Latest CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-k6RqeWeciBbMZdRc+...very-long-string..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-gray-200 font-inter">
+
+<div class="min-h-screen flex">
+  <!-- Sidebar -->
+  <aside class="w-80 bg-gray-800 p-6 rounded-r-3xl flex flex-col items-center space-y-6 shadow-xl">
+    <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="avatar" class="w-24 h-24 rounded-full shadow-lg" />
+    <h2 class="text-2xl font-bold">Akashdeep Dey</h2>
+    <span class="bg-gray-700 text-sm px-3 py-1 rounded-full">Web Developer</span>
+
+    <div class="w-full mt-6 space-y-4 text-sm">
+      <div class="flex items-center space-x-3">
+        <span><i class="fas fa-envelope text-yellow-400"></i></span><span>akashdeepdey.2004@gmail.com</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span><i class="fas fa-phone text-yellow-400"></i></span><span>+91 90510 81699</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span><i class="fas fa-birthday-cake text-yellow-400"></i></span><span>September 12, 2004</span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span><i class="fas fa-map-marker-alt text-yellow-400"></i></span><span>Bengaluru, India</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-10">
+    <!-- Navigation -->
+    <nav class="mb-8 flex space-x-6 text-gray-400 text-sm border-b border-gray-700 pb-2">
+      <a href="#about" class="nav-link active"><i class="fas fa-user mr-1"></i> About</a>
+      <a href="#resume" class="nav-link"><i class="fas fa-file-alt mr-1"></i> Resume</a>
+      <a href="#portfolio" class="nav-link"><i class="fas fa-briefcase mr-1"></i> Portfolio</a>
+      <a href="#contact" class="nav-link"><i class="fas fa-envelope mr-1"></i> Contact</a>
+    </nav>
+
+    <!-- About -->
+    <section id="about">
+      <h1 class="text-3xl font-bold mb-4"><i class="fas fa-user text-yellow-400"></i> About Me</h1>
+      <div class="text-gray-400 leading-relaxed max-w-3xl space-y-4 animate-fade-in">
+        <p>
+          I'm <strong>Akashdeep Dey</strong>, currently pursuing MCA at Christ University. I hold a BSc in Computer Science, Mathematics, and Electronics with a solid academic background and technical foundation.
+        </p>
+        <p>
+          My expertise spans <strong>full-stack development</strong>, <strong>gesture-based systems</strong>, and <strong>real-time applications</strong>. I work with technologies like <strong>Python, JavaScript, PHP, React, Node.js</strong>, and more.
+        </p>
+        <p>
+          I've built impactful projects ranging from Raspberry Pi–powered voice modulation to scalable fitness tracking apps using the MERN stack.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="mt-16">
+      <h2 class="text-2xl font-bold mb-6"><i class="fas fa-file-alt text-yellow-400"></i> Resume</h2>
+
+      <!-- Education -->
+      <div class="mb-10 animate-fade-in">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-graduation-cap mr-2"></i> Education</h3>
+        <div class="space-y-3 pl-4 border-l-4 border-yellow-400">
+          <div>
+            <strong>MCA</strong> – Christ University (2025–2027)<br>
+          </div>
+          <div>
+            <strong>BSc CME</strong> – Christ University (2022–2025)<br>
+            <span class="text-sm text-gray-400">71.28% | Computer Science, Math & Electronics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="mb-10 animate-fade-in delay-100">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-tools mr-2"></i> Technical Skills</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
+          <span>Python</span><span>JavaScript</span><span>PHP</span><span>C / C++</span><span>Java</span>
+          <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB / MySQL</span>
+          <span>MATLAB / Octave</span><span>Arduino</span><span>Git & GitHub</span>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+<div class="mb-10 animate-fade-in delay-200">
+  <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-certificate mr-2"></i> Certifications</h3>
+  <ul class="list-disc ml-6 text-gray-400 space-y-2">
+    <li><a href="cloud_computing_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">Cloud Computing – Infosys</a></li>
+    <li><a href="python_for_beginners_coursera.pdf" target="_blank" class="underline hover:text-yellow-400">Python for Beginners – Coursera</a></li>
+    <li><a href="css_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">CSS – Infosys</a></li>
+    <li><a href="data_science_python.pdf" target="_blank" class="underline hover:text-yellow-400">Data Science Using Python</a></li>
+    <li><a href="datacamp_intermediate_oop.pdf" target="_blank" class="underline hover:text-yellow-400">Intermediate OOP – DataCamp</a></li>
+    <li><a href="datacamp_intermediate_python.pdf" target="_blank" class="underline hover:text-yellow-400">Intermediate Python – DataCamp</a></li>
+    <li><a href="datacamp_kaggle.pdf" target="_blank" class="underline hover:text-yellow-400">Kaggle – DataCamp</a></li>
+    <li><a href="datacamp_pandas.pdf" target="_blank" class="underline hover:text-yellow-400">Pandas – DataCamp</a></li>
+    <li><a href="digital_electronics_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">Digital Electronics – Infosys</a></li>
+    <li><a href="html5_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">HTML5 – Infosys</a></li>
+  </ul>
+</div>
+
+      <!-- Achievements -->
+      <div class="mb-10 animate-fade-in delay-300">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-award mr-2"></i> Achievements</h3>
+        <p class="text-gray-400">🏅 3rd Rank – CS & Math Olympiad (SilverZone)</p>
+      </div>
+
+      <!-- Leadership -->
+      <div class="animate-fade-in delay-400">
+        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-user-tie mr-2"></i> Leadership</h3>
+        <ul class="list-disc ml-6 text-gray-400">
+          <li>Event Head – IoT Gateways 2025</li>
+          <li>Volunteer – Labyrinth 2023</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="portfolio" class="mt-16">
+  <h2 class="text-2xl font-bold mb-6"><i class="fas fa-briefcase text-yellow-400"></i> Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Project 1 -->
+<div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
+  <a href="voice-modulation.html" class="block h-full">
+    <img src="voicemodulation.png" alt="Voice Modulation" class="rounded-md mb-3 h-40 w-full object-cover">
+    <h3 class="text-xl font-bold mb-1">🎙 Voice Modulation</h3>
+    <p class="text-gray-400 text-sm">Gesture-based voice modulation using Raspberry Pi and PyAudio.</p>
+  </a>
+</div>
+
+    <!-- Project 2 -->
+    <div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden">
+      <img src="esports.png" alt="Esports Management System" class="rounded-md mb-3 h-40 w-full object-cover">
+      <h3 class="text-xl font-bold mb-1">🎮 Esports Management</h3>
+      <p class="text-gray-400 text-sm">CRUD-based player system using PHP and MySQL.</p>
+    </div>
+
+    <!-- Project 3 -->
+<div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
+  <a href="dsp-mini-project.html" class="block h-full">
+    <img src="dsp.png" alt="DSP Mini Projects" class="rounded-md mb-3 h-40 w-full object-cover">
+    <h3 class="text-xl font-bold mb-1">📊 DSP Mini Projects</h3>
+    <p class="text-gray-400 text-sm">Signal operations like modulation and sampling using Octave.</p>
+  </a>
+</div>
+
+
+   <!-- Project 4 -->
+<a href="fitness-tracking.html" class="block h-full">
+  <div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
+    <img src="fitness.png" alt="Fitness Tracker" class="rounded-md mb-3 h-40 w-full object-cover">
+    <h3 class="text-xl font-bold mb-1">🏋️ Fitness Tracker</h3>
+    <p class="text-gray-400 text-sm">Full-stack MERN-based health and fitness tracking web app.</p>
+  </div>
+</a>
+
+
+    <!-- Contact -->
+    <section id="contact" class="mt-16">
+      <h2 class="text-2xl font-bold mb-6"><i class="fas fa-envelope text-yellow-400"></i> Contact Me</h2>
+      <div class="space-y-2 text-gray-400">
+        <p><strong>Email:</strong> <a href="mailto:akashdeepdey.2004@gmail.com" class="underline">akashdeepdey.2004@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+919051081699" class="underline">+91 90510 81699</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akashdeep-dey-0a9562373" target="_blank" class="underline">akashdeep-dey</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Akash04471" target="_blank" class="underline">Akash04471</a></p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>

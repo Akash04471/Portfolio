@@ -1,0 +1,38 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  border-color: #facc15; /* yellow-400 */
+  color: #facc15;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
