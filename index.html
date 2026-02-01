@@ -1,186 +1,644 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akashdeep Dey | Portfolio</title>
+  <title>Akashdeep Dey | Creative Developer</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
+  <!-- Google Fonts - Distinctive Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400..800&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 (Latest CDN) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-k6RqeWeciBbMZdRc+...very-long-string..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GSAP for Advanced Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Particles.js for Interactive Background -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
+  
+
 </head>
-<body class="bg-gray-900 text-gray-200 font-inter">
+<body>
 
-<div class="min-h-screen flex">
-  <!-- Sidebar -->
-  <aside class="w-80 bg-gray-800 p-6 rounded-r-3xl flex flex-col items-center space-y-6 shadow-xl">
-    <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="avatar" class="w-24 h-24 rounded-full shadow-lg" />
-    <h2 class="text-2xl font-bold">Akashdeep Dey</h2>
-    <span class="bg-gray-700 text-sm px-3 py-1 rounded-full">Web Developer</span>
+<!-- Cursor Follower -->
+<div id="cursor" class="cursor-dot"></div>
+<div id="cursor-outline" class="cursor-outline"></div>
 
-    <div class="w-full mt-6 space-y-4 text-sm">
-      <div class="flex items-center space-x-3">
-        <span><i class="fas fa-envelope text-yellow-400"></i></span><span>akashdeepdey.2004@gmail.com</span>
-      </div>
-      <div class="flex items-center space-x-3">
-        <span><i class="fas fa-phone text-yellow-400"></i></span><span>+91 90510 81699</span>
-      </div>
-      <div class="flex items-center space-x-3">
-        <span><i class="fas fa-birthday-cake text-yellow-400"></i></span><span>September 12, 2004</span>
-      </div>
-      <div class="flex items-center space-x-3">
-        <span><i class="fas fa-map-marker-alt text-yellow-400"></i></span><span>Bengaluru, India</span>
-      </div>
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+<!-- Loading Screen -->
+<div id="loader" class="loader-screen">
+  <div class="loader-content">
+    <div class="glitch-text" data-text="AKASHDEEP">AKASHDEEP</div>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
     </div>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="flex-1 p-10">
-    <!-- Navigation -->
-    <nav class="mb-8 flex space-x-6 text-gray-400 text-sm border-b border-gray-700 pb-2">
-      <a href="#about" class="nav-link active"><i class="fas fa-user mr-1"></i> About</a>
-      <a href="#resume" class="nav-link"><i class="fas fa-file-alt mr-1"></i> Resume</a>
-      <a href="#portfolio" class="nav-link"><i class="fas fa-briefcase mr-1"></i> Portfolio</a>
-      <a href="#contact" class="nav-link"><i class="fas fa-envelope mr-1"></i> Contact</a>
-    </nav>
-
-    <!-- About -->
-    <section id="about">
-      <h1 class="text-3xl font-bold mb-4"><i class="fas fa-user text-yellow-400"></i> About Me</h1>
-      <div class="text-gray-400 leading-relaxed max-w-3xl space-y-4 animate-fade-in">
-        <p>
-          I'm <strong>Akashdeep Dey</strong>, currently pursuing MCA at Christ University. I hold a BSc in Computer Science, Mathematics, and Electronics with a solid academic background and technical foundation.
-        </p>
-        <p>
-          My expertise spans <strong>full-stack development</strong>, <strong>gesture-based systems</strong>, and <strong>real-time applications</strong>. I work with technologies like <strong>Python, JavaScript, PHP, React, Node.js</strong>, and more.
-        </p>
-        <p>
-          I've built impactful projects ranging from Raspberry Pi–powered voice modulation to scalable fitness tracking apps using the MERN stack.
-        </p>
-      </div>
-    </section>
-
-    <!-- Resume -->
-    <section id="resume" class="mt-16">
-      <h2 class="text-2xl font-bold mb-6"><i class="fas fa-file-alt text-yellow-400"></i> Resume</h2>
-
-      <!-- Education -->
-      <div class="mb-10 animate-fade-in">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-graduation-cap mr-2"></i> Education</h3>
-        <div class="space-y-3 pl-4 border-l-4 border-yellow-400">
-          <div>
-            <strong>MCA</strong> – Christ University (2025–2027)<br>
-          </div>
-          <div>
-            <strong>BSc CME</strong> – Christ University (2022–2025)<br>
-            <span class="text-sm text-gray-400">71.28% | Computer Science, Math & Electronics</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skills -->
-      <div class="mb-10 animate-fade-in delay-100">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-tools mr-2"></i> Technical Skills</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
-          <span>Python</span><span>JavaScript</span><span>PHP</span><span>C / C++</span><span>Java</span>
-          <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB / MySQL</span>
-          <span>MATLAB / Octave</span><span>Arduino</span><span>Git & GitHub</span>
-        </div>
-      </div>
-
-      <!-- Certifications -->
-<div class="mb-10 animate-fade-in delay-200">
-  <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-certificate mr-2"></i> Certifications</h3>
-  <ul class="list-disc ml-6 text-gray-400 space-y-2">
-    <li><a href="cloud_computing_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">Cloud Computing – Infosys</a></li>
-    <li><a href="python_for_beginners_coursera.pdf" target="_blank" class="underline hover:text-yellow-400">Python for Beginners – Coursera</a></li>
-    <li><a href="css_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">CSS – Infosys</a></li>
-    <li><a href="data_science_python.pdf" target="_blank" class="underline hover:text-yellow-400">Data Science Using Python</a></li>
-    <li><a href="datacamp_intermediate_oop.pdf" target="_blank" class="underline hover:text-yellow-400">Intermediate OOP – DataCamp</a></li>
-    <li><a href="datacamp_intermediate_python.pdf" target="_blank" class="underline hover:text-yellow-400">Intermediate Python – DataCamp</a></li>
-    <li><a href="datacamp_kaggle.pdf" target="_blank" class="underline hover:text-yellow-400">Kaggle – DataCamp</a></li>
-    <li><a href="datacamp_pandas.pdf" target="_blank" class="underline hover:text-yellow-400">Pandas – DataCamp</a></li>
-    <li><a href="digital_electronics_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">Digital Electronics – Infosys</a></li>
-    <li><a href="html5_infosys.pdf" target="_blank" class="underline hover:text-yellow-400">HTML5 – Infosys</a></li>
-  </ul>
-</div>
-
-      <!-- Achievements -->
-      <div class="mb-10 animate-fade-in delay-300">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-award mr-2"></i> Achievements</h3>
-        <p class="text-gray-400">🏅 3rd Rank – CS & Math Olympiad (SilverZone)</p>
-      </div>
-
-      <!-- Leadership -->
-      <div class="animate-fade-in delay-400">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-3"><i class="fas fa-user-tie mr-2"></i> Leadership</h3>
-        <ul class="list-disc ml-6 text-gray-400">
-          <li>Event Head – IoT Gateways 2025</li>
-          <li>Volunteer – Labyrinth 2023</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="portfolio" class="mt-16">
-  <h2 class="text-2xl font-bold mb-6"><i class="fas fa-briefcase text-yellow-400"></i> Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    <!-- Project 1 -->
-<div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
-  <a href="voice-modulation.html" class="block h-full">
-    <img src="voicemodulation.png" alt="Voice Modulation" class="rounded-md mb-3 h-40 w-full object-cover">
-    <h3 class="text-xl font-bold mb-1">🎙 Voice Modulation</h3>
-    <p class="text-gray-400 text-sm">Gesture-based voice modulation using Raspberry Pi and PyAudio.</p>
-  </a>
-</div>
-
-    <!-- Project 2 -->
-    <div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden">
-      <img src="esports.png" alt="Esports Management System" class="rounded-md mb-3 h-40 w-full object-cover">
-      <h3 class="text-xl font-bold mb-1">🎮 Esports Management</h3>
-      <p class="text-gray-400 text-sm">CRUD-based player system using PHP and MySQL.</p>
-    </div>
-
-    <!-- Project 3 -->
-<div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
-  <a href="dsp-mini-project.html" class="block h-full">
-    <img src="dsp.png" alt="DSP Mini Projects" class="rounded-md mb-3 h-40 w-full object-cover">
-    <h3 class="text-xl font-bold mb-1">📊 DSP Mini Projects</h3>
-    <p class="text-gray-400 text-sm">Signal operations like modulation and sampling using Octave.</p>
-  </a>
-</div>
-
-
-   <!-- Project 4 -->
-<a href="fitness-tracking.html" class="block h-full">
-  <div class="bg-gray-800 rounded-xl p-4 shadow hover:scale-105 transition overflow-hidden cursor-pointer">
-    <img src="fitness.png" alt="Fitness Tracker" class="rounded-md mb-3 h-40 w-full object-cover">
-    <h3 class="text-xl font-bold mb-1">🏋️ Fitness Tracker</h3>
-    <p class="text-gray-400 text-sm">Full-stack MERN-based health and fitness tracking web app.</p>
+    <p class="loading-text font-mono">INITIALIZING...</p>
   </div>
-</a>
+</div>
 
-
-    <!-- Contact -->
-    <section id="contact" class="mt-16">
-      <h2 class="text-2xl font-bold mb-6"><i class="fas fa-envelope text-yellow-400"></i> Contact Me</h2>
-      <div class="space-y-2 text-gray-400">
-        <p><strong>Email:</strong> <a href="mailto:akashdeepdey.2004@gmail.com" class="underline">akashdeepdey.2004@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+919051081699" class="underline">+91 90510 81699</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/akashdeep-dey-0a9562373" target="_blank" class="underline">akashdeep-dey</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Akash04471" target="_blank" class="underline">Akash04471</a></p>
+<!-- Main Container -->
+<div class="main-wrapper">
+  
+  <!-- Floating Navigation -->
+  <nav id="main-nav" class="floating-nav">
+    <div class="nav-container">
+      <div class="logo-section">
+        <span class="logo-text font-display">AD</span>
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for work</span>
+        </div>
       </div>
-    </section>
-  </main>
+      
+      <div class="nav-links">
+        <a href="#home" class="nav-link active" data-section="home">
+          <span class="nav-number">01</span>
+          <span class="nav-text">Home</span>
+        </a>
+        <a href="#about" class="nav-link" data-section="about">
+          <span class="nav-number">02</span>
+          <span class="nav-text">About</span>
+        </a>
+        <a href="#work" class="nav-link" data-section="work">
+          <span class="nav-number">03</span>
+          <span class="nav-text">Work</span>
+        </a>
+        <a href="#skills" class="nav-link" data-section="skills">
+          <span class="nav-number">04</span>
+          <span class="nav-text">Skills</span>
+        </a>
+        <a href="#contact" class="nav-link" data-section="contact">
+          <span class="nav-number">05</span>
+          <span class="nav-text">Contact</span>
+        </a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="sound-toggle" id="soundToggle">
+          <i class="fas fa-volume-up"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="section hero-section">
+    <div class="hero-content">
+      <div class="hero-label">
+        <span class="label-icon">✦</span>
+        <span>CREATIVE DEVELOPER</span>
+      </div>
+      
+      <h1 class="hero-title font-display">
+        <span class="line-reveal">Building</span>
+        <span class="line-reveal gradient-text">Digital</span>
+        <span class="line-reveal">Experiences</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Full-stack developer crafting immersive web applications
+        <br/>with cutting-edge technology and creative vision
+      </p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-count="15">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="3">0</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="10">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+      </div>
+      
+      <div class="hero-cta">
+        <a href="#contact" class="cta-button primary">
+          <span>Let's Connect</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#work" class="cta-button secondary">
+          <span>View Work</span>
+          <i class="fas fa-briefcase"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="floating-card card-1">
+        <i class="fab fa-react"></i>
+      </div>
+      <div class="floating-card card-2">
+        <i class="fab fa-node-js"></i>
+      </div>
+      <div class="floating-card card-3">
+        <i class="fab fa-python"></i>
+      </div>
+      <div class="floating-card card-4">
+        <i class="fas fa-database"></i>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title font-display">About Me</h2>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-image">
+        <div class="image-wrapper">
+          <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="Akashdeep Dey" class="profile-img" />
+          <div class="image-overlay"></div>
+        </div>
+        
+        <div class="quick-info">
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bengaluru, India</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-birthday-cake"></i>
+            <span>September 12, 2004</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>MCA Student</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <div class="intro-text">
+          <p class="highlight-text">
+            Hi, I'm <span class="gradient-text font-display">Akashdeep Dey</span>
+          </p>
+          <p>
+            A passionate full-stack developer currently pursuing my MCA at Christ University. 
+            With a strong foundation in Computer Science, Mathematics, and Electronics from my BSc, 
+            I bring a unique analytical approach to web development.
+          </p>
+          <p>
+            My expertise spans across <strong>gesture-based systems</strong>, <strong>real-time applications</strong>, 
+            and <strong>full-stack development</strong>. I thrive on transforming complex problems into 
+            elegant, user-friendly solutions.
+          </p>
+          <p>
+            From building Raspberry Pi-powered voice modulation systems to creating scalable 
+            fitness tracking applications with the MERN stack, I'm constantly pushing the 
+            boundaries of what's possible with code.
+          </p>
+        </div>
+        
+        <div class="education-timeline">
+          <h3 class="timeline-title font-display">Education Journey</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2025 - 2027</span>
+                <h4>Master of Computer Applications</h4>
+                <p>Christ University, Bangalore</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2022 - 2025</span>
+                <h4>BSc in CME (71.28%)</h4>
+                <p>Computer Science, Mathematics & Electronics</p>
+                <p>Christ University, Bangalore</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="achievements-box">
+          <div class="achievement-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="achievement-text">
+            <h4>3rd Rank - CS & Math Olympiad</h4>
+            <p>SilverZone International Competition</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="section work-section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title font-display">Featured Work</h2>
+    </div>
+    
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card" data-project="1">
+        <div class="project-image">
+          <img src="voicemodulation.png" alt="Voice Modulation System" />
+          <div class="project-overlay">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">IoT</span>
+          </div>
+          <h3 class="project-title font-display">Voice Modulation System</h3>
+          <p class="project-description">
+            Gesture-controlled voice modulation using Raspberry Pi and PyAudio. 
+            Real-time audio processing with intuitive hand gesture controls.
+          </p>
+          <div class="project-tech">
+            <i class="fab fa-python"></i>
+            <i class="fas fa-microphone"></i>
+            <i class="fas fa-hand-paper"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-card" data-project="2">
+        <div class="project-image">
+          <img src="fitness.png" alt="Fitness Tracking App" />
+          <div class="project-overlay">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">MERN</span>
+            <span class="tag">Full-Stack</span>
+            <span class="tag">React</span>
+          </div>
+          <h3 class="project-title font-display">Fitness Tracking Platform</h3>
+          <p class="project-description">
+            Comprehensive health and fitness tracking web application built with 
+            MongoDB, Express, React, and Node.js.
+          </p>
+          <div class="project-tech">
+            <i class="fab fa-react"></i>
+            <i class="fab fa-node-js"></i>
+            <i class="fas fa-database"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 3 -->
+      <div class="project-card" data-project="3">
+        <div class="project-image">
+          <img src="esports.png" alt="Esports Management" />
+          <div class="project-overlay">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">CRUD</span>
+          </div>
+          <h3 class="project-title font-display">Esports Management System</h3>
+          <p class="project-description">
+            Player management system with full CRUD operations for esports 
+            tournaments and team administration.
+          </p>
+          <div class="project-tech">
+            <i class="fab fa-php"></i>
+            <i class="fas fa-database"></i>
+            <i class="fas fa-gamepad"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 4 -->
+      <div class="project-card" data-project="4">
+        <div class="project-image">
+          <img src="dsp.png" alt="DSP Projects" />
+          <div class="project-overlay">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags">
+            <span class="tag">MATLAB</span>
+            <span class="tag">Octave</span>
+            <span class="tag">Signal Processing</span>
+          </div>
+          <h3 class="project-title font-display">DSP Mini Projects</h3>
+          <p class="project-description">
+            Digital signal processing implementations including modulation, 
+            sampling, and various signal operations using Octave.
+          </p>
+          <div class="project-tech">
+            <i class="fas fa-wave-square"></i>
+            <i class="fas fa-chart-line"></i>
+            <i class="fas fa-signal"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title font-display">Tech Arsenal</h2>
+    </div>
+    
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3 class="category-title font-display">Languages</h3>
+        <div class="skill-grid">
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-js"></i>
+            <span>JavaScript</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-php"></i>
+            <span>PHP</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-java"></i>
+            <span>Java</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>C / C++</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3 class="category-title font-display">Frameworks & Libraries</h3>
+        <div class="skill-grid">
+          <div class="skill-item">
+            <i class="fab fa-react"></i>
+            <span>React.js</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-node-js"></i>
+            <span>Node.js</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-server"></i>
+            <span>Express.js</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3 class="category-title font-display">Databases & Tools</h3>
+        <div class="skill-grid">
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>MongoDB</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>MySQL</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-git-alt"></i>
+            <span>Git & GitHub</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-microchip"></i>
+            <span>Arduino</span>
+            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="certifications-showcase">
+        <h3 class="category-title font-display">Certifications</h3>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <i class="fas fa-cloud"></i>
+            <span>Cloud Computing - Infosys</span>
+          </div>
+          <div class="cert-item">
+            <i class="fab fa-python"></i>
+            <span>Python - Coursera</span>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Data Science - Python</span>
+          </div>
+          <div class="cert-item">
+            <i class="fab fa-kaggle"></i>
+            <span>Kaggle - DataCamp</span>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-code"></i>
+            <span>OOP - DataCamp</span>
+          </div>
+          <div class="cert-item">
+            <i class="fas fa-microchip"></i>
+            <span>Digital Electronics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title font-display">Let's Build Something</h2>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-intro">
+          <h3 class="font-display gradient-text">Ready to collaborate?</h3>
+          <p>
+            I'm currently open to freelance opportunities, collaborations, and 
+            full-time positions. Let's create something amazing together!
+          </p>
+        </div>
+        
+        <div class="contact-methods">
+          <a href="mailto:akashdeepdey.2004@gmail.com" class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="method-info">
+              <span class="method-label">Email</span>
+              <span class="method-value">akashdeepdey.2004@gmail.com</span>
+            </div>
+            <i class="fas fa-arrow-right method-arrow"></i>
+          </a>
+          
+          <a href="tel:+919051081699" class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="method-info">
+              <span class="method-label">Phone</span>
+              <span class="method-value">+91 90510 81699</span>
+            </div>
+            <i class="fas fa-arrow-right method-arrow"></i>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/akashdeep-dey-0a9562373" target="_blank" class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="method-info">
+              <span class="method-label">LinkedIn</span>
+              <span class="method-value">akashdeep-dey</span>
+            </div>
+            <i class="fas fa-arrow-right method-arrow"></i>
+          </a>
+          
+          <a href="https://github.com/Akash04471" target="_blank" class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="method-info">
+              <span class="method-label">GitHub</span>
+              <span class="method-value">Akash04471</span>
+            </div>
+            <i class="fas fa-arrow-right method-arrow"></i>
+          </a>
+        </div>
+        
+        <div class="availability-card">
+          <div class="availability-icon">
+            <div class="pulse-dot"></div>
+          </div>
+          <div class="availability-text">
+            <h4>Currently Available</h4>
+            <p>Response time: Within 24 hours</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com" />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="Let's work together" />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-button">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        
+        <div class="form-success" id="formSuccess">
+          <i class="fas fa-check-circle"></i>
+          <h4>Message Sent!</h4>
+          <p>Thanks for reaching out. I'll get back to you soon!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3 class="font-display">Akashdeep Dey</h3>
+        <p>Full-Stack Developer & Creative Technologist</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Navigation</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://github.com/Akash04471" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/akashdeep-dey-0a9562373" target="_blank">LinkedIn</a>
+          <a href="mailto:akashdeepdey.2004@gmail.com">Email</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Leadership</h4>
+          <p>Event Head - IoT Gateways 2025</p>
+          <p>Volunteer - Labyrinth 2023</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Akashdeep Dey. Crafted with passion & code.</p>
+      <p class="font-mono">v2.0.0</p>
+    </div>
+  </footer>
+
 </div>
 
 <!-- Custom JS -->
