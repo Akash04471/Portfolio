@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "build": "postcss src/tailwind.css -o dist/tailwind.css --env production && cp index.html dist/ && rm -rf dist/src dist/public && cp -r src dist/src && cp -r public dist/public",
+    "build": "node build.js",
     "build:css": "postcss src/tailwind.css -o dist/tailwind.css --env production",
     "watch:css": "postcss src/tailwind.css -o dist/tailwind.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
